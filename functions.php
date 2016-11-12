@@ -1,13 +1,13 @@
 <?php
 /**
- * kez functions and definitions.
+ * kw functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package kez
+ * @package kw
  */
 
-if ( ! function_exists( 'kez_setup' ) ) :
+if ( ! function_exists( 'kerry_walls_wp_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'kez_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function kez_setup() {
+function kerry_walls_wp_theme_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on kez, use a find and replace
-	 * to change 'kez' to the name of your theme in all the template files.
+	 * If you're building a theme based on kw, use a find and replace
+	 * to change 'kerry-walls-wp-theme' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'kez', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'kerry-walls-wp-theme', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function kez_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'kez' ),
+		'primary' => esc_html__( 'Primary', 'kerry-walls-wp-theme' ),
 	) );
 
 	/*
@@ -60,13 +60,13 @@ function kez_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'kez_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'kerry_walls_wp_theme_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'kez_setup' );
+add_action( 'after_setup_theme', 'kerry_walls_wp_theme_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -75,44 +75,44 @@ add_action( 'after_setup_theme', 'kez_setup' );
  *
  * @global int $content_width
  */
-function kez_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'kez_content_width', 640 );
+function kerry_walls_wp_theme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'kerry_walls_wp_theme_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'kez_content_width', 0 );
+add_action( 'after_setup_theme', 'kerry_walls_wp_theme_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function kez_widgets_init() {
+function kerry_walls_wp_theme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'kez' ),
+		'name'          => esc_html__( 'Sidebar', 'kerry-walls-wp-theme' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'kez' ),
+		'description'   => esc_html__( 'Add widgets here.', 'kerry-walls-wp-theme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'kez_widgets_init' );
+add_action( 'widgets_init', 'kerry_walls_wp_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function kez_scripts() {
-	wp_enqueue_style( 'kez-style', get_stylesheet_uri() );
+function kerry_walls_wp_theme_scripts() {
+	wp_enqueue_style( 'kerry-walls-wp-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'kez-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'kerry-walls-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'kez-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'kerry-walls-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'kez_scripts' );
+add_action( 'wp_enqueue_scripts', 'kerry_walls_wp_theme_scripts' );
 
 /**
  * Implement the Custom Header feature.

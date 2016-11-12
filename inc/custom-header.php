@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package kez
+ * @package kw
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses kez_header_style()
+ * @uses kerry_walls_wp_theme_header_style()
  */
-function kez_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'kez_custom_header_args', array(
+function kerry_walls_wp_theme_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'kerry_walls_wp_theme_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'kez_header_style',
+		'wp-head-callback'       => 'kerry_walls_wp_theme_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'kez_custom_header_setup' );
+add_action( 'after_setup_theme', 'kerry_walls_wp_theme_custom_header_setup' );
 
-if ( ! function_exists( 'kez_header_style' ) ) :
+if ( ! function_exists( 'kerry_walls_wp_theme_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see kez_custom_header_setup().
+ * @see kerry_walls_wp_theme_custom_header_setup().
  */
-function kez_header_style() {
+function kerry_walls_wp_theme_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

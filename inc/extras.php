@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package kez
+ * @package kw
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function kez_body_classes( $classes ) {
+function kerry_walls_wp_theme_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,14 +26,14 @@ function kez_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'kez_body_classes' );
+add_filter( 'body_class', 'kerry_walls_wp_theme_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function kez_pingback_header() {
+function kerry_walls_wp_theme_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
 	}
 }
-add_action( 'wp_head', 'kez_pingback_header' );
+add_action( 'wp_head', 'kerry_walls_wp_theme_pingback_header' );
