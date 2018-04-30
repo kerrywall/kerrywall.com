@@ -1,34 +1,9 @@
-body {
-	margin: 0;
-	@include media($tablet) {
-		padding: 0;
-	}
-}
-
 .site {
-	@include media($tablet) {
-		@include row;
-	}
+	@include column(10);
+	@include push(1);
 }
 
-.persistent-nav {
-	background: $nav-bg;
-	@include span-columns(12);
-	@include media($tablet) {
-		width: 33.3%;
-		padding: 50px;
-		height: 100%;
-		position: fixed;
-		box-shadow: 0 0 10px #999;
-	}
-}
-.site-content {
-	background: $content-bg;
-	@include span-columns(12);
-	@include media($tablet) {
-		width: 66.7%;
-		margin-left: 33.3%;
-		@include omega;
-		padding: 50px;
-	}	
+body {
+	border-top: 10px solid $color__accent;
+	border-bottom: 10px solid $color__secondary-accent;
 }

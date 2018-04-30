@@ -10,12 +10,13 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<footer class="clearfix">
+	<p>&copy; 2017. email kerry / twitter / linkedin</p>
+</footer>
 
 </body>
 </html>

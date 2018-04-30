@@ -1,7 +1,7 @@
 // custom colours
 
-$nav-bg: #FAFAFA;
-$content-bg: #EDF0F6;
+$nav-bg: #313131;
+$content-bg: #313131;
 
 $color__background-body: $nav-bg;
 $color__background-screen: #f1f1f1;
@@ -11,12 +11,15 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #666;
-$color__link-visited: #333;
-$color__link-hover: midnightblue;
-$color__text-main: #333;
+$color__text-input: #ff9c9c;
+$color__text-input-focus: #ff9c9c;
+$color__link: #ff9c9c;
+$color__link-visited: #ff9c9c;
+$color__link-hover: #ffcd39;
+$color__text-main: #dedede;
+$color__text-header: #ff9c9c;
+$color__accent: #ff9c9c;
+$color__secondary-accent: #ffcd39;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;

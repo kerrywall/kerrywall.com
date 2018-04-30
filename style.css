@@ -41,6 +41,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    display: table;
+    content: '';
+    line-height: 0; }
+  body:after {
+    clear: both; }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -224,18 +241,35 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: "Muli", sans-serif;
+  color: #dedede;
+  font-family: "Karla", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Sarala", sans-serif; }
+  font-family: "Karla", sans-serif;
+  color: #ff9c9c; }
+
+h1, h2, p.site-title {
+  font-weight: 800;
+  text-transform: uppercase; }
 
 h1 {
-  font-weight: bold; }
+  font-size: 56px;
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  color: #dedede;
+  text-align: right; }
+  @media only screen and (min-width: 640px) {
+    h1 {
+      font-size: 72px;
+      font-size: 4.5rem; } }
+
+h2 {
+  font-size: 32px;
+  font-size: 2rem; }
 
 p {
   margin-bottom: 1.5em; }
@@ -276,6 +310,10 @@ mark, ins {
 big {
   font-size: 125%; }
 
+p, li {
+  font-size: 21.6px;
+  font-size: 1.35rem; }
+
 html {
   box-sizing: border-box; }
 
@@ -295,7 +333,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #FAFAFA;
+  background: #313131;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
@@ -393,7 +431,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
+  color: #ff9c9c;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px; }
@@ -413,7 +451,7 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #111; }
+    color: #ff9c9c; }
 
 select {
   border: 1px solid #ccc; }
@@ -428,11 +466,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #666; }
+  color: #ff9c9c;
+  transition: 0.25s all ease; }
   a:visited {
-    color: #333; }
+    color: #ff9c9c; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #ffcd39; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -444,7 +483,7 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
+  float: right;
   width: 100%; }
   .main-navigation ul {
     display: none;
@@ -453,7 +492,7 @@ a {
     padding-left: 0; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
+      float: right;
       position: absolute;
       top: 1.5em;
       left: -999em;
@@ -470,8 +509,17 @@ a {
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
-    float: left;
-    position: relative; }
+    float: right;
+    position: relative;
+    margin: 0 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em; }
+    .main-navigation li:first-child {
+      margin-right: 0; }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      text-decoration: underline; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
@@ -601,28 +649,46 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-  display: block; }
+.site {
+  display: inline-block;
+  float: left;
+  width: 83.33333%;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  margin-left: 8.33333%; }
 
-.hentry {
-  margin: 0 0 1.5em; }
+body {
+  border-top: 10px solid #ff9c9c;
+  border-bottom: 10px solid #ffcd39; }
 
-.byline,
-.updated:not(.published) {
-  display: none; }
+.project {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  padding-left: 0; }
+  @media only screen and (min-width: 768px) {
+    .project {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding-left: 1.04167%;
+      padding-right: 1.04167%;
+      padding-left: 0; } }
+  .project h3 {
+    margin: 0;
+    padding: 0 3px; }
 
-.single .byline,
-.group-blog .byline {
-  display: inline; }
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0; }
-
-.page-links {
+footer {
+  text-align: center;
   clear: both;
-  margin: 0 0 1.5em; }
+  display: inline-block;
+  float: left;
+  width: 83.33333%;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  margin-left: 8.33333%; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -633,50 +699,17 @@ a {
 .bypostauthor {
   display: block; }
 
+.site {
+  display: inline-block;
+  float: left;
+  width: 83.33333%;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  margin-left: 8.33333%; }
+
 body {
-  margin: 0; }
-  @media screen and (min-width: 768px) {
-    body {
-      padding: 0; } }
-
-@media screen and (min-width: 768px) {
-  .site {
-    display: block; }
-    .site::after {
-      clear: both;
-      content: "";
-      display: block; } }
-
-.persistent-nav {
-  background: #FAFAFA;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%; }
-  .persistent-nav:last-child {
-    margin-right: 0; }
-  @media screen and (min-width: 768px) {
-    .persistent-nav {
-      width: 33.3%;
-      padding: 50px;
-      height: 100%;
-      position: fixed;
-      box-shadow: 0 0 10px #999; } }
-
-.site-content {
-  background: #EDF0F6;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%; }
-  .site-content:last-child {
-    margin-right: 0; }
-  @media screen and (min-width: 768px) {
-    .site-content {
-      width: 66.7%;
-      margin-left: 33.3%;
-      margin-right: 0;
-      padding: 50px; } }
+  border-top: 10px solid #ff9c9c;
+  border-bottom: 10px solid #ffcd39; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

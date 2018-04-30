@@ -6,3 +6,11 @@ $size__site-sidebar: 25%;
 $mobile: 640px;
 $tablet: 768px;
 $desktop: 1024px;
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}

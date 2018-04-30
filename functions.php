@@ -102,11 +102,11 @@ add_action( 'widgets_init', 'kerry_walls_wp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function kerry_walls_wp_theme_scripts() {
-	wp_enqueue_style( 'kerry-walls-wp-theme-style', get_stylesheet_uri() );
+	 wp_enqueue_style( 'kerrystyles', get_stylesheet_directory_uri() . '/style.css' , array(), '1.0' );
 
-	wp_enqueue_script( 'kerry-walls-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'kerry-walls-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20180304', true );
 
-	wp_enqueue_script( 'kerry-walls-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'kerry-walls-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20180304', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

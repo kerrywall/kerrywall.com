@@ -1,0 +1,12 @@
+.project {
+	@include column(12);
+	padding-left: 0;
+	@include min-screen(768px) {
+		@include column(6);
+		padding-left: 0;
+	}
+	h3 {
+		margin: 0;
+		padding: 0 3px; 
+	}
+}
