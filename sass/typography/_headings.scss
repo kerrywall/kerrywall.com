@@ -9,13 +9,30 @@ h1, h2, p.site-title {
 	text-transform: uppercase;
 }
 
-h1 {
-	@include font-size(3.5);
+.site-title {
+	@include font-size(2.5);
 	margin-bottom: 0;
 	color: $color__text-main;
-	text-align: right;
+	text-align: left;
+	line-height: 1;
 	@include min-screen(640px) {
 		@include font-size(4.5);
+		text-align: right;
+	}
+	a, a:visited {
+		color: $color__text-main;
+		text-decoration: none;
+	}
+	a:hover {
+		border-bottom: 3px solid;
+		color: $color__secondary-accent;
+	}
+}
+
+h1.entry-title {
+	@include font-size(2);
+	@include min-screen(640px) {
+		@include font-size(2.5);
 	}
 }
 

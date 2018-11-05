@@ -1,12 +1,68 @@
 .project {
-	@include column(12);
-	padding-left: 0;
 	@include min-screen(768px) {
-		@include column(6);
+		@include column(4);
 		padding-left: 0;
 	}
+	transition: 0.25s all ease;
 	h3 {
-		margin: 0;
-		padding: 0 3px; 
+		margin-top: 0;
+		transition: 0.25s all ease;
+	}
+	img {
+		width: 100%;
+		border-radius: 3px;
+	}
+	a {
+		text-decoration: none;
+		color: $color__accent;
+	}
+	a:hover {
+		border-bottom: 2px solid;
+		color: $color__secondary-accent;
+	}
+	&:hover {
+		h3 {
+			color: $color__secondary-accent;
+			text-decoration: underline;
+		}
+	}
+}
+
+.projects {
+	p {
+		clear: both;
+	}
+}
+
+// individual portfolio-item page
+.portfolio {
+	.image {
+		@include min-screen(768px) {
+			@include column(5);
+			padding-left: 0;
+		}
+		img {
+			border-radius: 3px;
+		}
+	}
+	.text {
+		@include min-screen(768px) {
+			@include column(7);
+		}
+		p:first-child {
+			@include min-screen(768px) {
+				margin-top: 0;
+			}
+		}
+	}
+	h1 {
+		// @include min-screen(768px) {
+		// 	margin-top: 0;
+		// }
+	}
+	p.summary {
+		@include font-size(1.35);
+		margin-top: 0;
+		font-style: italic;
 	}
 }
