@@ -256,16 +256,32 @@ h1, h2, p.site-title {
   font-weight: 800;
   text-transform: uppercase; }
 
-h1 {
-  font-size: 56px;
-  font-size: 3.5rem;
+.site-title {
+  font-size: 40px;
+  font-size: 2.5rem;
   margin-bottom: 0;
   color: #dedede;
-  text-align: right; }
+  text-align: left;
+  line-height: 1; }
   @media only screen and (min-width: 640px) {
-    h1 {
+    .site-title {
       font-size: 72px;
-      font-size: 4.5rem; } }
+      font-size: 4.5rem;
+      text-align: right; } }
+  .site-title a, .site-title a:visited {
+    color: #dedede;
+    text-decoration: none; }
+  .site-title a:hover {
+    border-bottom: 3px solid;
+    color: #ffcd39; }
+
+h1.entry-title {
+  font-size: 32px;
+  font-size: 2rem; }
+  @media only screen and (min-width: 640px) {
+    h1.entry-title {
+      font-size: 40px;
+      font-size: 2.5rem; } }
 
 h2 {
   font-size: 32px;
@@ -659,26 +675,67 @@ a {
 
 body {
   border-top: 10px solid #ff9c9c;
-  border-bottom: 10px solid #ffcd39; }
+  border-bottom: 10px solid #ffcd39;
+  min-height: 100vh; }
 
 .project {
-  display: inline-block;
-  float: left;
-  width: 100%;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-  padding-left: 0; }
+  transition: 0.25s all ease; }
   @media only screen and (min-width: 768px) {
     .project {
       display: inline-block;
       float: left;
-      width: 50%;
+      width: 33.33333%;
       padding-left: 1.04167%;
       padding-right: 1.04167%;
       padding-left: 0; } }
   .project h3 {
-    margin: 0;
-    padding: 0 3px; }
+    margin-top: 0;
+    transition: 0.25s all ease; }
+  .project img {
+    width: 100%;
+    border-radius: 3px; }
+  .project a {
+    text-decoration: none;
+    color: #ff9c9c; }
+  .project a:hover {
+    border-bottom: 2px solid;
+    color: #ffcd39; }
+  .project:hover h3 {
+    color: #ffcd39;
+    text-decoration: underline; }
+
+.projects p {
+  clear: both; }
+
+@media only screen and (min-width: 768px) {
+  .portfolio .image {
+    display: inline-block;
+    float: left;
+    width: 41.66667%;
+    padding-left: 1.04167%;
+    padding-right: 1.04167%;
+    padding-left: 0; } }
+
+.portfolio .image img {
+  border-radius: 3px; }
+
+@media only screen and (min-width: 768px) {
+  .portfolio .text {
+    display: inline-block;
+    float: left;
+    width: 58.33333%;
+    padding-left: 1.04167%;
+    padding-right: 1.04167%; } }
+
+@media only screen and (min-width: 768px) {
+  .portfolio .text p:first-child {
+    margin-top: 0; } }
+
+.portfolio p.summary {
+  font-size: 21.6px;
+  font-size: 1.35rem;
+  margin-top: 0;
+  font-style: italic; }
 
 footer {
   text-align: center;
@@ -709,7 +766,8 @@ footer {
 
 body {
   border-top: 10px solid #ff9c9c;
-  border-bottom: 10px solid #ffcd39; }
+  border-bottom: 10px solid #ffcd39;
+  min-height: 100vh; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
