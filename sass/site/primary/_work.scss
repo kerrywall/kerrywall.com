@@ -1,7 +1,6 @@
 .project {
 	@include min-screen(768px) {
 		@include column(4);
-		padding-left: 0;
 	}
 	transition: 0.25s all ease;
 	h3 {
@@ -39,6 +38,7 @@
 	.image {
 		@include min-screen(768px) {
 			@include column(5);
+			padding-left: 0;
 		}
 		img {
 			border-radius: 3px;
