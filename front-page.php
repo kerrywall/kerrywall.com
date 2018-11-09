@@ -36,7 +36,9 @@ get_header(); ?>
 			while ( $the_query->have_posts() ) {
 				echo '<div class="project clearfix">';
 				$the_query->the_post();
-				echo '<a href="' . get_the_permalink($the_query->post->ID) . '"><div class="image">' . get_the_post_thumbnail() . '</div>';
+				echo '<a href="' . get_the_permalink($the_query->post->ID) . '"><div class="image">'; ?>
+				<img src="<?php the_post_thumbnail_url(array(400, 400)); ?>"/>
+				<?php echo '</div>';
 				echo '<h3>' . get_the_title($the_query->post->ID) . '</h3>';
 				echo '</a></div>';
 			}
