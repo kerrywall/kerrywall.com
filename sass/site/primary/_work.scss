@@ -39,7 +39,6 @@
 	.image {
 		@include min-screen(768px) {
 			@include column(5);
-			padding-left: 0;
 		}
 		img {
 			border-radius: 3px;
