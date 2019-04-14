@@ -16,9 +16,8 @@ get_header(); ?>
 
 	<div id="primary" class="about">
 		<h2>hi</h2>
-		<p>I'm a web developer, web manager, web writer, web-accessibilty enthusiast, and generally a web fan. I first dabbled in code in 1999, while in high school.</p>
-		<p>I have more than 10 years of professional web experience in the areas listed above, as well as a journalism degree (with a major in print) from Ryerson University. I completed a certificate in digital media skills from OCAD University in 2012, and HackerYou's full-time front-end development bootcamp in 2014.</p>
-		<p>I'm also a runner, knitter, and amateur pianist. I'm available for freelance web development and/or consulting.</p>
+		<p>I'm a web developer, web manager, web writer, web-accessibilty enthusiast, and generally a web fan.</p>
+		<p>I build custom sites, handle maintenance and updates, and consult on all things web on a freelance basis, with a particular focus on the performing arts industry.</p>
 	</div><!-- #primary -->
 	<div class="projects">
 		<h2>projects</h2>
@@ -37,7 +36,7 @@ get_header(); ?>
 				echo '<div class="project clearfix">';
 				$the_query->the_post();
 				echo '<a href="' . get_the_permalink($the_query->post->ID) . '"><div class="image">'; ?>
-				<img src="<?php the_post_thumbnail_url(array(400, 400)); ?>"/>
+				<img src="<?php the_post_thumbnail_url(); ?>" alt />
 				<?php echo '</div>';
 				echo '<h3>' . get_the_title($the_query->post->ID) . '</h3>';
 				echo '</a></div>';
