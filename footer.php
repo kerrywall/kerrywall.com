@@ -15,7 +15,7 @@
 </div><!-- #page -->
 
 <footer class="clearfix">
-	<p>&copy; 2018</p> 
+	<p>&copy; 2019</p> 
 	<p><a href="mailto:kw@kerrywall.com">email kerry</a> / <a href="https://twitter.com/kerrywall">twitter</a> / <a href="https://www.linkedin.com/in/kerry-wall-1bb4304/">linkedin</a></p>
 </footer>
 
